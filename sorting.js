@@ -63,7 +63,7 @@ function mergeSort(array) {
 function merge(left, right, array) {
   let leftIndex = 0;
   let rightIndex = 0;
-  
+
   let outputIndex = 0;
   while (leftIndex < left.length && rightIndex < right.length) {
       if (left[leftIndex] < right[rightIndex]) {
@@ -113,7 +113,7 @@ function quickSort(array, start = 0, end = array.length) {
 
 Lomuto's algorithm
 -the pivot is the final value in the array
--loop through the arary
+-loop through the array
 -swap values as you go to put them on either side of the pivot point
 -put the pivot into the correct place in the array */
 function partition(array, start, end) {
