@@ -59,9 +59,11 @@ function mergeSort(array) {
 // when 1 of the arrays is empty, it adds the remaining values from the other array
 
 // best, average, and worst case: logarithmic O(log(n))
+
 function merge(left, right, array) {
   let leftIndex = 0;
   let rightIndex = 0;
+  
   let outputIndex = 0;
   while (leftIndex < left.length && rightIndex < right.length) {
       if (left[leftIndex] < right[rightIndex]) {
