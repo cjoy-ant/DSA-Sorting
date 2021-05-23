@@ -171,6 +171,26 @@ const main = () => {
 
   console.log(sortLL(LL))
 
+  // 6. Bucket sort
+
+  // UNFINISHED
+
+  let arrayInts = [1, 4, -3, 5, -7, -2, 8, -1, -5, 6];
+
+  // take array, lowest int, highest int as parameters
+  // compare numbers in the array to the lowest and highest ints
+
+  const sortInts = (array, lowest, highest) => { // start = lowest, end = highest
+    let result = []
+    array = array.filter(i => i!==lowest)
+    array = array.filter(i => i!==highest)
+    console.log(array)
+    result.push(lowest)
+    result.push(highest)
+    return result
+  };
+
+  console.log(sortInts(arrayInts, -7, 8));
 };
 
 module.exports = main;
