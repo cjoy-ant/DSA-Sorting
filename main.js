@@ -1,3 +1,4 @@
+const LinkedList = require("./linkedList");
 const {
   swap,
   bubbleSort,
@@ -6,6 +7,8 @@ const {
   quickSort,
   partition
 } = require("./sorting");
+const practice = require("./mergeSort-practice");
+const quickSort2 = require("./quickSort-practice");
 
 const main = () => {
   // 1. Understanding merge sort
@@ -137,60 +140,53 @@ const main = () => {
     5
   ];
 
-  console.log(quickSort(dataset));
+  // console.log(quickSort(dataset));
+
+  const input = [1, 4, 2, 8, 345, 123, 43, 32, 5643, 62, 123, 43, 2, 55, 1, 234, 92]
+  console.log("quickSort: " + quickSort2(input))
 
   // 4. implement merge sort
 
-  console.log(mergeSort(dataset));
+  console.log("merge sort: " + mergeSort(dataset));
 
   // 5. sorting a linked list using merge sort
 
-  const LL = new LinkedList()
-  LL.insertFirst(5)
-  LL.insertLast(7)
-  LL.insertLast(9)
-  LL.insertLast(2)
-  LL.insertLast(10)
-  LL.insertLast(4)
-  LL.insertLast(8)
-  LL.insertLast(1)
-  LL.insertLast(3)
-  LL.insertLast(6)
-  console.log(LL)
+  const LL = new LinkedList();
+  LL.insertFirst(5);
+  LL.insertLast(7);
+  LL.insertLast(9);
+  LL.insertLast(2);
+  LL.insertLast(10);
+  LL.insertLast(4);
+  LL.insertLast(8);
+  LL.insertLast(1);
+  LL.insertLast(3);
+  LL.insertLast(6);
+  console.log(LL);
 
   const sortLL = (LL) => {
-    let array = []
-    let current = LL.head
+    let array = [];
+    let current = LL.head;
     while (current !== null) {
-      array.push(current.value)
-      current = current.next
+      array.push(current.value);
+      current = current.next;
     }
-    mergeSort(array)
-    return array
-  }
+    mergeSort(array);
+    return array;
+  };
 
-  console.log(sortLL(LL))
+  console.log(sortLL(LL));
 
   // 6. Bucket sort
 
-  // UNFINISHED
-
   let arrayInts = [1, 4, -3, 5, -7, -2, 8, -1, -5, 6];
 
-  // take array, lowest int, highest int as parameters
-  // compare numbers in the array to the lowest and highest ints
-
-  const sortInts = (array, lowest, highest) => { // start = lowest, end = highest
-    let result = []
-    array = array.filter(i => i!==lowest)
-    array = array.filter(i => i!==highest)
-    console.log(array)
-    result.push(lowest)
-    result.push(highest)
-    return result
-  };
+  const sortInts = (array, start, end) => {};
 
   console.log(sortInts(arrayInts, -7, 8));
+
+  // mergeLL practice
+  //practice();
 };
 
 module.exports = main;
